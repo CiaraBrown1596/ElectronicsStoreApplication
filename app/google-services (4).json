@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "955515381260",
+    "project_id": "electronicsstoreapplication",
+    "storage_bucket": "electronicsstoreapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955515381260:android:638d946268753baa73b029",
+        "android_client_info": {
+          "package_name": "com.example.electronicsstoreapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955515381260-p27o3fm4r84qrg4r7d2iutnfb72g08og.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDef61S-DDqf3JkziXaidh0HRSNhxat7tI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955515381260-p27o3fm4r84qrg4r7d2iutnfb72g08og.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
