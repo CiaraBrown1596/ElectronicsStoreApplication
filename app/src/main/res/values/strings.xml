@@ -16,8 +16,6 @@
     <string name="enter_your_password">Enter your Password</string>
     <string name="log_in">Log in</string>
     <string name="not_registered_sign_up_here">Not Registered? Sign up here!</string>
-    <string name="enter_your_email">Enter your Email</string>
-    <string name="enter_your_password">Enter your Password</string>
     <string name="register_user">Register User</string>
     <string name="already_registered_sign_in_here">Already Registered? Sign in here!</string>
 </resources>
