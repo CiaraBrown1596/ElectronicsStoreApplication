@@ -28,4 +28,6 @@
     <string name="enter_your_username">Enter Username</string>
     <string name="admin_Login">Admin Login</string>
     <string name="this_is_the_home_page">this is the home page</string>
+    <string name="Not_admin_Login">Not Admin</string>
+    <string name="Login">Log In</string>
 </resources>

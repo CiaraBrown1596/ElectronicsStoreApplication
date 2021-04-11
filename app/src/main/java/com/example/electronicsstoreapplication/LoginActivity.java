@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button buttonSignIn;
     private EditText usernameLogin;
     private EditText passwordLogin;
-    private TextView textViewLogIn, textViewAdmin;
+    private TextView textViewLogIn, textViewAdmin, textViewNotAdmin;
     private String ParentDBName = "Users";
 
     private ProgressDialog progressDialog;
@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonSignIn = findViewById(R.id.buttonLogin);
         textViewLogIn = findViewById(R.id.textViewSignUp);
         textViewAdmin = findViewById(R.id.textViewAdmin);
+        textViewNotAdmin = findViewById(R.id.textViewNotAdmin);
 
        buttonSignIn.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -69,6 +70,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 buttonSignIn.setText(R.string.btnAdmin);
                 textViewAdmin.setVisibility(View.INVISIBLE);
+                textViewNotAdmin.setVisibility(View.VISIBLE);
+                ParentDBName = "Admins";
+            }
+        });
+        textViewNotAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonSignIn.setText(R.string.Login);
+                textViewAdmin.setVisibility(View.VISIBLE);
+                textViewNotAdmin.setVisibility(View.INVISIBLE);
+                ParentDBName = "Users";
+
+
             }
         });
 
@@ -114,10 +128,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     {
                         if(userData.getPassword().equals(password))
                         {
-                            Toast.makeText(LoginActivity.this,"Logged in Successfully", Toast.LENGTH_LONG).show();
-                            progressDialog.dismiss();
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            startActivity(intent);
+                            if(ParentDBName.equals("Admins"))
+                            {
+                                Toast.makeText(LoginActivity.this,"Logged in Successfully as Admin", Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                                Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                                startActivity(intent);
+                            }
+                            else if(ParentDBName.equals("Users"))
+                            {
+                                Toast.makeText(LoginActivity.this,"Logged in Successfully as User", Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                            }
 
                         }
                         else
@@ -134,7 +158,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 {
                     Toast.makeText(LoginActivity.this,"Error: Username already exists", Toast.LENGTH_LONG).show();
                     progressDialog.dismiss();
-                    Toast.makeText(LoginActivity.this,"Retry with a different Email", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this,"Retry with a different Username", Toast.LENGTH_LONG).show();
 
                 }
             }

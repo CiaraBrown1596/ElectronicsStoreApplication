@@ -18,7 +18,6 @@ tools:context="com.example.electronicsstoreapplication.LoginActivity">
         android:id="@+id/app_logo"
         android:src="@drawable/common_google_signin_btn_icon_dark"
         android:cropToPadding="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"/>
 
     <TextView
@@ -34,6 +33,7 @@ tools:context="com.example.electronicsstoreapplication.LoginActivity">
         android:layout_margin="15dp"
         android:inputType="textEmailAddress"
         android:hint="@string/enter_your_username"
+        android:autofillHints="@string/enter_your_email"
         android:id="@+id/editTextLoginUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,6 +43,7 @@ tools:context="com.example.electronicsstoreapplication.LoginActivity">
         android:layout_margin="15dp"
         android:inputType="textPassword"
         android:hint="@string/enter_your_password"
+        android:autofillHints="@string/enter_your_password"
         android:id="@+id/editTextLoginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -72,6 +73,16 @@ tools:context="com.example.electronicsstoreapplication.LoginActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" />
+
+    <TextView
+        android:textAlignment="center"
+        android:text="@string/Not_admin_Login"
+        android:textSize="22sp"
+        android:id="@+id/textViewNotAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
 
 </LinearLayout>
 

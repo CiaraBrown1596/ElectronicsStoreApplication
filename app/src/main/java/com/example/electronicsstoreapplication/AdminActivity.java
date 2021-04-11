@@ -3,6 +3,7 @@ package com.example.electronicsstoreapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -10,5 +11,8 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+        Toast.makeText(AdminActivity.this,"Welcome Admin", Toast.LENGTH_LONG).show();
+
     }
 }
