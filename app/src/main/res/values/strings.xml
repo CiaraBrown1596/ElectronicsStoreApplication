@@ -18,4 +18,9 @@
     <string name="not_registered_sign_up_here">Not Registered? Sign up here!</string>
     <string name="register_user">Register User</string>
     <string name="already_registered_sign_in_here">Already Registered? Sign in here!</string>
+    <string name="Admin_login" />
+    <string name="admin_login">Admin_login</string>
+    <string name="enter_your_UserName" />
+    <string name="enter_a_username">Enter a Username</string>
+    <string name="btnAdmin">Login as Admin</string>
 </resources>
