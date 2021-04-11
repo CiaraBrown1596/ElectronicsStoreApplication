@@ -23,4 +23,9 @@
     <string name="enter_your_UserName" />
     <string name="enter_a_username">Enter a Username</string>
     <string name="btnAdmin">Login as Admin</string>
+    <string name="Log_Out">Log_out</string>
+    <string name="enter_your_usernmae">enter_username</string>
+    <string name="enter_your_username">Enter Username</string>
+    <string name="admin_Login">Admin Login</string>
+    <string name="this_is_the_home_page">this is the home page</string>
 </resources>
