@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/admin_background"
+    tools:context=".AdminActivity">
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/welcome_admin_please_add_new_products"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/Linear1_CategoryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:contentDescription="@string/add_new_phones"
+            android:id="@+id/Phones"
+            android:tooltipText="Phones"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:src="@drawable/phone_icon"/>
+
+
+        <ImageView
+            android:contentDescription="@string/add_new_laptops"
+            android:id="@+id/Laptops"
+            android:layout_width="120dp"
+            android:tooltipText="Laptops"
+            android:layout_height="140dp"
+            android:src="@drawable/laptop_icon"/>
+
+        <ImageView
+            android:contentDescription="@string/add_new_gaming_items"
+            android:id="@+id/Gaming"
+            android:tooltipText="Gaming"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:src="@drawable/gaming_icon"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear2_CategoryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Linear1_CategoryLayout"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:contentDescription="@string/add_new_fridges"
+            android:id="@+id/Fridge"
+            android:tooltipText="Fridges"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:src="@drawable/fridge_icon"
+            />
+
+
+        <ImageView
+            android:contentDescription="@string/add_new_blenders"
+            android:id="@+id/Blenders"
+            android:layout_width="120dp"
+            android:tooltipText="Blenders"
+            android:layout_height="140dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/blender_icon" />
+
+        <ImageView
+            android:contentDescription="@string/add_new_tvs"
+            android:id="@+id/Tvs"
+            android:layout_width="120dp"
+            android:tooltipText="Add  "
+            android:layout_height="140dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/tv_icon" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/admin_Logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Linear2_CategoryLayout"
+        android:layout_margin="20sp"
+        android:background="@drawable/buttons2"
+        android:text="@string/admin_logout"
+        android:textSize="20sp"/>
+
+
+
+
+</RelativeLayout>

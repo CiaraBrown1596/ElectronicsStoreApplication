@@ -30,4 +30,13 @@
     <string name="this_is_the_home_page">this is the home page</string>
     <string name="Not_admin_Login">Not Admin</string>
     <string name="Login">Log In</string>
+    <string name="add_new_products">add new products</string>
+    <string name="welcome_admin_please_add_new_products">Welcome Admin, Please add new Products</string>
+    <string name="admin_logout">Admin Logout</string>
+    <string name="add_new_phones">Add New Phones</string>
+    <string name="add_new_laptops">Add New Laptops</string>
+    <string name="add_new_gaming_items">Add New Gaming Items</string>
+    <string name="add_new_fridges">Add New Fridges</string>
+    <string name="add_new_blenders">Add New Blenders</string>
+    <string name="add_new_tvs">Add New Tvs</string>
 </resources>
