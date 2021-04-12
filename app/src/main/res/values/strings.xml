@@ -39,4 +39,8 @@
     <string name="add_new_fridges">Add New Fridges</string>
     <string name="add_new_blenders">Add New Blenders</string>
     <string name="add_new_tvs">Add New Tvs</string>
+    <string name="add_product">Add Product</string>
+    <string name="product_price">Product Price...</string>
+    <string name="product_description">Product Description...</string>
+    <string name="product_name">Product Name...</string>
 </resources>
