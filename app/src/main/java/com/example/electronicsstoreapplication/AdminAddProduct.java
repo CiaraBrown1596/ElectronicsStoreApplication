@@ -53,6 +53,9 @@ public class AdminAddProduct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_product);
 
+        myFirebaseAuth = FirebaseAuth.getInstance();
+
+
         CategoryName = getIntent().getExtras().get("category").toString();
 
         ProductImagesRef = FirebaseStorage.getInstance().getReference().child("Product Images");
@@ -214,14 +217,14 @@ public class AdminAddProduct extends AppCompatActivity {
     private void SaveProductInfoToDatabase()
     {
         HashMap<String, Object> productMap = new HashMap<>();
-        productMap.put("pid", productRandomKey);
-        productMap.put("date", saveCurrentDate);
-        productMap.put("time", saveCurrentTime);
-        productMap.put("description", ProductDescription);
-        productMap.put("image", downloadImageUrl);
-        productMap.put("category", CategoryName);
-        productMap.put("price", ProductPrice);
-        productMap.put("pname", ProductName);
+        productMap.put("ProductId", productRandomKey);
+        productMap.put("Date", saveCurrentDate);
+        productMap.put("Time", saveCurrentTime);
+        productMap.put("ProductDescription", ProductDescription);
+        productMap.put("Image", downloadImageUrl);
+        productMap.put("Category", CategoryName);
+        productMap.put("Price", ProductPrice);
+        productMap.put("ProductName", ProductName);
 
         ProductsRef.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

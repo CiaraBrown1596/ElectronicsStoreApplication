@@ -60,7 +60,6 @@ public class SignUpActivity extends AppCompatActivity {
 
         textViewSignIn = findViewById(R.id.textViewSignIn);
 
-
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -103,6 +103,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             progressDialog.setMessage("Please wait while your account is being Logged in");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
+
+            myFirebaseAuth.signInWithEmailAndPassword(Username, Password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressDialog.dismiss();
+                            if(task.isSuccessful()){
+                                //start the activity
+                                finish();
+                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            }
+                        }
+                    });
+
+
         }
 
 
