@@ -43,4 +43,7 @@
     <string name="product_price">Product Price...</string>
     <string name="product_description">Product Description...</string>
     <string name="product_name">Product Name...</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>
