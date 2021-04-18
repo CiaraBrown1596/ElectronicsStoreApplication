@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class AdminActivity extends AppCompatActivity {
 
-    private Button btnAddProduct;
+    private Button btnAddProduct, btnOrders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +21,20 @@ public class AdminActivity extends AppCompatActivity {
 
         btnAddProduct = findViewById(R.id.btnAddNewProducts);
 
+        btnOrders = findViewById(R.id.admin_orders);
+
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminActivity.this, AdminProductCategory.class);
+                startActivity(intent);
+            }
+        });
+
+        btnOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, AdminNewOrdersActivity.class);
                 startActivity(intent);
             }
         });

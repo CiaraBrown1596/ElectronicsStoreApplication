@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/admin_background"
+    android:background="@android:color/darker_gray"
     tools:context=".AdminActivity">
 
     <TextView
@@ -90,7 +90,7 @@
         <ImageView
             android:contentDescription="@string/add_new_tvs"
             android:id="@+id/Tvs"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:tooltipText="Add  "
             android:layout_height="140dp"
             android:layout_marginStart="10dp"
@@ -99,6 +99,7 @@
 
 
     </LinearLayout>
+
 
 
     <Button
@@ -110,6 +111,7 @@
         android:background="@drawable/buttons2"
         android:text="@string/admin_logout"
         android:textSize="20sp"/>
+
 
 
 

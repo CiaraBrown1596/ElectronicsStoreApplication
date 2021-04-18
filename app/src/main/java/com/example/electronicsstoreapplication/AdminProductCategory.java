@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 
 public class AdminProductCategory extends AppCompatActivity {
 
     private ImageView phones, laptops, tvs, fridges, gaming, blenders;
+    private Button btnLogout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class AdminProductCategory extends AppCompatActivity {
         blenders = findViewById(R.id.Blenders);
         fridges = findViewById(R.id.Fridge);
         gaming = findViewById(R.id.Gaming);
+        btnLogout = findViewById(R.id.admin_Logout);
 
         phones.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +80,13 @@ public class AdminProductCategory extends AppCompatActivity {
                 Intent intent = new Intent(AdminProductCategory.this, AdminAddProduct.class);
                 intent.putExtra("category", "Fridges");
                 startActivity(intent);
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

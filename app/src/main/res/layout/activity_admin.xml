@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/admin_background"
     tools:context=".AdminActivity">
 
 
@@ -10,8 +11,21 @@
         android:layout_margin="15dp"
         android:id="@+id/btnAddNewProducts"
         android:text="@string/add_new_products"
+        android:padding="15dp"
         android:layout_width="match_parent"
         android:background="@drawable/buttons"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/admin_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/btnAddNewProducts"
+        android:layout_margin="20sp"
+        android:background="@drawable/buttons"
+        android:text="Orders"
+        android:textSize="20sp"/>
+
 
 </RelativeLayout>
