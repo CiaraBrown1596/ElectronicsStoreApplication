@@ -99,6 +99,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
+            case R.id.nav_settings:
+                Intent intent1 = new Intent(HomeActivity.this, SettingActivity.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent1);
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
