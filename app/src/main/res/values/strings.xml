@@ -54,5 +54,9 @@
     <string name="user_name">User Name</string>
     <string name="total_price">Total Price</string>
     <string name="your_final_order_is_placed">Your Final Order is Placed.</string>
+    <string name="please_enter_your_shipping_details">Please Enter your Shipping Details</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_address">Enter your Address</string>
+    <string name="confirm">Confirm</string>
 
 </resources>
