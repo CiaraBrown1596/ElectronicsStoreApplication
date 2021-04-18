@@ -18,7 +18,7 @@ public class CategoryActivity extends AppCompatActivity  {
 
     RecyclerView recyclerView;
     MyAdapter myAdapter;
-    Button btnReturn;
+    //Button btnReturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
