@@ -52,5 +52,7 @@
     <string name="logout">Logout</string>
     <string name="browns_electronics">Browns Electronics</string>
     <string name="user_name">User Name</string>
+    <string name="total_price">Total Price</string>
+    <string name="your_final_order_is_placed">Your Final Order is Placed.</string>
 
 </resources>

@@ -56,11 +56,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new CartFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_cart);
-        }
 
         View headerView = findViewById(R.id.nav_view);
         TextView userNameTextView = headerView.findViewById(R.id.user_name_profile);
@@ -87,17 +82,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_cart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CartFragment()).commit();
+                Intent intent = new Intent(HomeActivity.this, CategoryActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
                 break;
             case R.id.nav_orders:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new OrdersFragment()).commit();
                 break;
             case R.id.nav_categories:
-                Intent intent = new Intent(HomeActivity.this, CategoryActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+                Intent intent2 = new Intent(HomeActivity.this, CategoryActivity.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
                 break;
             case R.id.nav_settings:
                 Intent intent1 = new Intent(HomeActivity.this, SettingActivity.class);

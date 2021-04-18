@@ -1,6 +1,5 @@
 package com.example.electronicsstoreapplication;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,8 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.core.Context;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import Model.Cart;
 import Model.Products;
 
 public class MyAdapter extends FirebaseRecyclerAdapter<Products, MyAdapter.myViewHolder> {
@@ -37,6 +36,8 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Products, MyAdapter.myVie
     }
 
 
+
+
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder myViewHolder, int position, @NonNull Products products) {
 
@@ -47,21 +48,6 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Products, MyAdapter.myVie
         Glide.with(myViewHolder.productImage.getContext()).load(products.getImage()).into(myViewHolder.productImage);
         myViewHolder.productDescription.setText(products.getProductDescription());
         myViewHolder.productPrice.setText(products.getPrice());
-
-        myViewHolder.productImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ProductDetailsActivity.class);
-                intent.putExtra("ProductName", temp.getProductName());
-                intent.putExtra("ProductDescription", temp.getProductDescription());
-                intent.putExtra("Price", temp.getPrice());
-                intent.putExtra("Image", temp.getImage());
-
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                v.getContext().startActivity(intent);
-
-            }
-        });
 
     }
     @NonNull
