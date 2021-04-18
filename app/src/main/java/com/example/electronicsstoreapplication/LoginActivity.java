@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import Model.Users;
+import Prevalent.Prevalent;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -57,33 +58,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textViewAdmin = findViewById(R.id.textViewAdmin);
         textViewNotAdmin = findViewById(R.id.textViewNotAdmin);
 
-       buttonSignIn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v)
-           {
-               userLogin();
-           }
-       });
+       buttonSignIn.setOnClickListener(v -> userLogin());
 
-        textViewAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonSignIn.setText(R.string.btnAdmin);
-                textViewAdmin.setVisibility(View.INVISIBLE);
-                textViewNotAdmin.setVisibility(View.VISIBLE);
-                ParentDBName = "Admins";
-            }
+        textViewAdmin.setOnClickListener(v -> {
+            buttonSignIn.setText(R.string.btnAdmin);
+            textViewAdmin.setVisibility(View.INVISIBLE);
+            textViewNotAdmin.setVisibility(View.VISIBLE);
+            ParentDBName = "Admins";
         });
-        textViewNotAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonSignIn.setText(R.string.Login);
-                textViewAdmin.setVisibility(View.VISIBLE);
-                textViewNotAdmin.setVisibility(View.INVISIBLE);
-                ParentDBName = "Users";
+        textViewNotAdmin.setOnClickListener(v -> {
+            buttonSignIn.setText(R.string.Login);
+            textViewAdmin.setVisibility(View.VISIBLE);
+            textViewNotAdmin.setVisibility(View.INVISIBLE);
+            ParentDBName = "Users";
 
 
-            }
         });
 
     }
@@ -105,15 +94,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             progressDialog.show();
 
             myFirebaseAuth.signInWithEmailAndPassword(Username, Password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            progressDialog.dismiss();
-                            if(task.isSuccessful()){
-                                //start the activity
-                                finish();
-                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                            }
+                    .addOnCompleteListener(this, task -> {
+                        progressDialog.dismiss();
+                        if(task.isSuccessful()){
+                            //start the activity
+                            finish();
+                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                         }
                     });
 
@@ -154,7 +140,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             {
                                 Toast.makeText(LoginActivity.this,"Logged in Successfully as User", Toast.LENGTH_LONG).show();
                                 progressDialog.dismiss();
+
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                Prevalent.currentUser = userData;
                                 startActivity(intent);
                             }
 
@@ -193,7 +181,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         if (v == textViewLogIn) {
             finish();
-            startActivity(new Intent(this, SignUpActivity.class));
+            startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
         }
     }
 

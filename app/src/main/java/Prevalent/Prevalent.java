@@ -3,5 +3,5 @@ package Prevalent;
 import Model.Users;
 
 public class Prevalent {
-    private static Users currentUser;
+    public static Users currentUser;
 }
