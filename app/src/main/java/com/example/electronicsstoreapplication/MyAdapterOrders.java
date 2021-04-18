@@ -1,8 +1,10 @@
 package com.example.electronicsstoreapplication;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,6 +53,7 @@ public class MyAdapterOrders extends FirebaseRecyclerAdapter<Orders, MyAdapterOr
         myViewHolder.orderDataTime.setText(orders.getDateTime());
         myViewHolder.orderTotalPrice.setText(orders.getTotalAmount());
 
+
     }
     @NonNull
     @Override
@@ -64,6 +67,7 @@ public class MyAdapterOrders extends FirebaseRecyclerAdapter<Orders, MyAdapterOr
 
 
         TextView orderName, orderEmail, orderAddress, orderDataTime, orderTotalPrice;
+
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);

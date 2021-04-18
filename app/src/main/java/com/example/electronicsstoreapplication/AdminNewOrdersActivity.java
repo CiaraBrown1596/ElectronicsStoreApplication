@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
     private RecyclerView ordersList;
     private DatabaseReference ordersRef;
+    Button btnShowOrders;
     RecyclerView recyclerView;
     MyAdapterOrders myAdapterOrders;
 
@@ -33,8 +35,18 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
         ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
 
+        btnShowOrders = findViewById(R.id.btn_show_orders);
+
         ordersList = findViewById(R.id.ordersList);
         ordersList.setLayoutManager(new LinearLayoutManager(this));
+
+        btnShowOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminNewOrdersActivity.this, AdminUserProductsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
